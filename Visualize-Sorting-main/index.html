@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorting Visualizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="sort.png" alt="Sorting Visualizer Logo" id="logo" />
+    <p class="subtitle">
+      Interactive Animated Visual Comparison of Popular Sorting Algorithms
+    </p>
+  </header>
+
+  <main>
+    <section id="controls-panel" aria-label="Sorting Controls">
+      <div class="row algorithm-controls">
+        <label for="algorithm_select" class="visually-hidden">Choose Algorithm</label>
+        <select id="algorithm_select">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="insertion">Insertion Sort</option>
+          <option value="merge">Merge Sort</option>
+          <option value="quick">Quick Sort</option>
+          <option value="heap">Heap Sort</option>
+        </select>
+        <button id="runSort">Run</button>
+        <button id="pauseSort">Pause</button>
+        <button id="resumeSort">Resume</button>
+        <button id="stepForward">Step</button>
+        <button id="newArray">New Array</button>
+        <button id="stopSort">Stop</button>
+      </div>
+      <div class="row sliders">
+        <label for="size_input">Array Size</label>
+        <input id="size_input" type="range" min="10" max="100" value="60" />
+        <label for="speed_input">Speed</label>
+        <input id="speed_input" type="range" min="20" max="300" value="60" />
+      </div>
+    </section>
+
+    <aside id="legend" aria-label="Color Legend">
+      <h2 class="visually-hidden">Legend</h2>
+      <span class="legend-bar" style="background: #f7f779"></span> Comparing
+      <span class="legend-bar" style="background: #ff4081"></span> Moving/Swapping
+      <span class="legend-bar" style="background: #adff2f"></span> Sorted
+      <span class="legend-bar" style="background: #ffd700"></span> Selected
+      <span class="legend-bar" style="background: #ff5733"></span> Pivot
+      <span class="legend-bar" style="background: #00bfff"></span> Focus
+    </aside>
+
+    <section id="visualizer-container" aria-label="Sorting Visualization">
+      <div id="sorting" class="flex-container" tabindex="0" aria-label="Array Visualization"></div>
+    </section>
+
+    <section id="algo-info" aria-label="Algorithm Information">
+      <h3 id="algorithmName">Bubble Sort</h3>
+      <p id="algorithmDescription">
+        Click "Run" to start visualizing the selected sorting algorithm!
+      </p>
+      <ul id="complexityList">
+        <li><strong>Time Complexity:</strong> <span id="complexityTime">O(n²)</span></li>
+        <li><strong>Space Complexity:</strong> <span id="complexitySpace">O(1)</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2025 Shreyaskar Chakraborty - Sorting Visualizer Project. Design & Code with <span aria-label="love">❤️</span></small>
+  </footer>
+  
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
